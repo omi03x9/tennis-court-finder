@@ -53,3 +53,13 @@
 ![公開サイトの検索結果](screenshots/live-desktop.jpg)
 
 実機のiPhone/Androidでの操作は未検証です。公式サイトの変更や混雑による将来の取得可否を保証するものではありません。
+
+## 2026-10-04 Vercel移行
+
+- 公開URL: https://m2tio-court-finder.vercel.app/
+- 無料Hobbyプランで公開。GitHubアプリはOnly select repositories、tennis-court-finderの1件に保存・再読み込み確認済み。
+- 初期日付は日本時間の当日、初期時刻19:00〜21:00、タイトルM2TIO COURT FINDER。
+- 既存のプラン判定8テスト成功。Vercel用handlerをHTTP経由で実行し3市・79面を確認。
+- ログインしていないブラウザーから2026-10-15 19:00〜21:00を検索。柏51面、流山15面、我孫子13面すべて確認済み、3施設の候補を表示。初回検索の約15秒後に完了を確認。
+- スマホ幅390pxで表示と横はみ出しを確認。実機iPhone/Androidは未検証。
+- Render版にもタイトルと初期時刻を反映し、公開画面で確認済み。

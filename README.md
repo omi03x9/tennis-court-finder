@@ -2,9 +2,9 @@
 
 柏市・流山市・我孫子市の公開予約情報から、指定した1日の時間帯にソフトテニスで使える1面を探すWebアプリです。予約操作やログインは行いません。スマートフォンとPCに対応しています。
 
-**[検索サイトを開く](https://tennis-court-finder.onrender.com/)**
+**[検索サイトを開く](https://m2tio-court-finder.vercel.app/)**
 
-[GitHubリポジトリ](https://github.com/omi03x9/tennis-court-finder)。Renderの無料プランで公開しています。しばらく利用がない場合、初回の表示に起動待ちが発生します。
+[GitHubリポジトリ](https://github.com/omi03x9/tennis-court-finder)。Vercelの無料Hobbyプランで公開しています。画面は静的配信、検索APIはPython Functionsで実行します。検索時には自治体サイトへの照会時間がかかります。
 
 ## 検索の動作
 
@@ -30,7 +30,7 @@ python server.py
 
 ## GitHubへの保存と公開
 
-ソースコードをGitHubに置き、PythonサーバーはRenderなどのWebサービスで動かす構成です。各市の予約サイトとの通信はサーバー側で行うため、静的ファイルを配信するGitHub Pagesだけでは動作しません。
+ソースコードをGitHubに置き、Vercelで画面とPython検索APIを公開する構成です。各市の予約サイトとの通信はサーバー側で行うため、静的ファイルを配信するGitHub Pagesだけでは動作しません。
 
 公開の具体的な手順は[DEPLOY.md](DEPLOY.md)、検証内容は[VALIDATION.md](VALIDATION.md)を参照してください。Render用の無料プラン設定を`render.yaml`に含めています。
 
@@ -61,8 +61,8 @@ node --check public/app.js
 
 各市の公式サービスではありません。
 
-## Vercelへの移行準備
+## Vercelでの公開
 
-初期時刻は19:00〜21:00、日付は日本時間の当日です。Vercelでは`public/`を静的配信し、`api/search.py`が既存の検索処理を実行します。`vercel.json`は東京リージョン・最大120秒で設定しています。新しい依存ライブラリは不要です。公開環境の検証が完了するまでは上記Render URLを使用してください。
+初期時刻は19:00〜21:00、日付は日本時間の当日です。Vercelでは`public/`を静的配信し、`api/search.py`が既存の検索処理を実行します。`vercel.json`は東京リージョン・最大120秒で設定しています。新しい依存ライブラリは不要です。2026年10月4日にVercelで公開し、匿名ブラウザーから3市・79面の検索成功を確認しました。
 
 Vercelの無料HobbyプランでGitHubリポジトリをImportし、Framework PresetはOther、Root Directoryはリポジトリ直下とします。設定は`vercel.json`を使用します。公開後は匿名でのページ表示と3市の検索を確認してください。APIの同時検索制限は各実行インスタンス内に適用されます。
