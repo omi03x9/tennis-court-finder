@@ -1,6 +1,8 @@
 # 公開手順
 
-想定する保存先はGitHubアカウント`omi03x9`の新規リポジトリ`tennis-court-finder`です。公開用のコードを準備した段階では、リポジトリや公開URLが作成済みとは限りません。
+保存先は[omi03x9/tennis-court-finder](https://github.com/omi03x9/tennis-court-finder)、公開URLは[tennis-court-finder.onrender.com](https://tennis-court-finder.onrender.com/)です。2026年10月4日にRenderの無料プラン、Singaporeリージョンでデプロイしました。
+
+現在はPublic Git RepositoryのURLを指定して公開しています。GitHubの非公開リポジトリへの権限をRenderに与える必要はありません。以下は再作成する場合の手順です。
 
 ## 1. GitHub
 
@@ -12,7 +14,7 @@
 ## 2. Render
 
 1. [Render](https://dashboard.render.com/)にサインインします。アカウントを作る場合、利用規約への同意は本人が行ってください。
-2. New → Web ServiceでGitHubの`omi03x9/tennis-court-finder`を選びます。GitHub連携は対象リポジトリだけに絞れます。連携権限を本人が確認してください。
+2. New → Web Service → Public Git Repositoryで`https://github.com/omi03x9/tennis-court-finder`を指定します。
 3. 以下の設定を確認します。Blueprintから`render.yaml`を使う方法もあります。
 
 | 項目 | 値 |
@@ -34,4 +36,4 @@
 
 ## 更新
 
-GitHubのコードを更新し、Renderで再デプロイします。各市の画面が変わって取得エラーが出る場合は、`sources.py`を修正して実データで検証してから公開してください。
+GitHubのコードを更新し、Renderのサービス画面でManual Deploy → Deploy latest commitを選びます。Public Git Repository方式では通常のGitHub連携による自動デプロイは使いません。各市の画面が変わって取得エラーが出る場合は、`sources.py`を修正して実データで検証してから公開してください。

@@ -2,6 +2,10 @@
 
 柏市・流山市・我孫子市の公開予約情報から、指定した1日の時間帯にソフトテニスで使える1面を探すWebアプリです。予約操作やログインは行いません。スマートフォンとPCに対応しています。
 
+**[検索サイトを開く](https://tennis-court-finder.onrender.com/)**
+
+[GitHubリポジトリ](https://github.com/omi03x9/tennis-court-finder)。Renderの無料プランで公開しています。しばらく利用がない場合、初回の表示に起動待ちが発生します。
+
 ## 検索の動作
 
 - 検索のたびに各市の公開情報を取得します。
@@ -28,7 +32,7 @@ python server.py
 
 ソースコードをGitHubに置き、PythonサーバーはRenderなどのWebサービスで動かす構成です。各市の予約サイトとの通信はサーバー側で行うため、静的ファイルを配信するGitHub Pagesだけでは動作しません。
 
-公開の具体的な手順は[DEPLOY.md](DEPLOY.md)、検証内容は[VALIDATION.md](VALIDATION.md)を参照してください。Render用の無料プラン設定を`render.yaml`に含めています。公開URLはデプロイが成功してから確定します。
+公開の具体的な手順は[DEPLOY.md](DEPLOY.md)、検証内容は[VALIDATION.md](VALIDATION.md)を参照してください。Render用の無料プラン設定を`render.yaml`に含めています。
 
 ## 構成
 
