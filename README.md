@@ -1,4 +1,4 @@
-# テニスコート空き検索
+# M2TIO COURT FINDER
 
 柏市・流山市・我孫子市の公開予約情報から、指定した1日の時間帯にソフトテニスで使える1面を探すWebアプリです。予約操作やログインは行いません。スマートフォンとPCに対応しています。
 
@@ -60,3 +60,9 @@ node --check public/app.js
 - [ちば施設予約システム（我孫子市のみ）](https://www.cm1.eprs.jp/yoyaku-chiba/ew/)
 
 各市の公式サービスではありません。
+
+## Vercelへの移行準備
+
+初期時刻は19:00〜21:00、日付は日本時間の当日です。Vercelでは`public/`を静的配信し、`api/search.py`が既存の検索処理を実行します。`vercel.json`は東京リージョン・最大120秒で設定しています。新しい依存ライブラリは不要です。公開環境の検証が完了するまでは上記Render URLを使用してください。
+
+Vercelの無料HobbyプランでGitHubリポジトリをImportし、Framework PresetはOther、Root Directoryはリポジトリ直下とします。設定は`vercel.json`を使用します。公開後は匿名でのページ表示と3市の検索を確認してください。APIの同時検索制限は各実行インスタンス内に適用されます。
