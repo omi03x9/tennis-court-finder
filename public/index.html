@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#102b35">
   <meta name="description" content="柏・流山・我孫子のテニスコートの空き状況をまとめて検索。日時を指定して、同じ施設内でコートをつなぐ利用プランを探せます。">
-  <title>テニスコート空き検索 | 柏・流山・我孫子</title>
+  <title>M2TIO COURT FINDER</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="topbar"><div class="brand"><span class="brand-icon" aria-hidden="true">T</span><span>COURT FINDER</span></div><span class="area">柏・流山・我孫子</span></header>
+  <header class="topbar"><div class="brand"><span class="brand-icon" aria-hidden="true">T</span><span>M2TIO COURT FINDER</span></div><span class="area">柏・流山・我孫子</span></header>
   <main>
     <div class="page-heading"><div><p class="eyebrow">SOFT TENNIS · 1面</p><h1>プレーできるコートを探す</h1></div><span class="read-only">空き状況の確認のみ</span></div>
     <form id="search-form" class="search-panel">
       <div class="inputs">
         <label class="date-label">利用日<input id="date" name="date" type="date" required></label>
-        <label>開始<input id="start" name="start" type="time" value="18:00" step="1800" required></label>
+        <label>開始<input id="start" name="start" type="time" value="19:00" step="1800" required></label>
         <span class="time-divider" aria-hidden="true">〜</span>
-        <label>終了<input id="end" name="end" type="time" value="20:00" step="1800" required></label>
+        <label>終了<input id="end" name="end" type="time" value="21:00" step="1800" required></label>
         <button type="submit" id="search-button">空き状況を検索</button>
       </div>
       <div class="search-bottom"><fieldset><legend>検索する市</legend><label><input type="checkbox" name="cities" value="kashiwa" checked>柏市</label><label><input type="checkbox" name="cities" value="nagareyama" checked>流山市</label><label><input type="checkbox" name="cities" value="abiko" checked>我孫子市</label></fieldset><p>同じ施設内のコート移動も含めて検索</p></div>
