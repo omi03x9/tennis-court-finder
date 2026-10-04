@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b35">
+  <meta name="description" content="柏・流山・我孫子のテニスコートの空き状況をまとめて検索。日時を指定して、同じ施設内でコートをつなぐ利用プランを探せます。">
+  <title>テニスコート空き検索 | 柏・流山・我孫子</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><div class="brand"><span class="brand-icon" aria-hidden="true">T</span><span>COURT FINDER</span></div><span class="area">柏・流山・我孫子</span></header>
+  <main>
+    <div class="page-heading"><div><p class="eyebrow">SOFT TENNIS · 1面</p><h1>プレーできるコートを探す</h1></div><span class="read-only">空き状況の確認のみ</span></div>
+    <form id="search-form" class="search-panel">
+      <div class="inputs">
+        <label class="date-label">利用日<input id="date" name="date" type="date" required></label>
+        <label>開始<input id="start" name="start" type="time" value="18:00" step="1800" required></label>
+        <span class="time-divider" aria-hidden="true">〜</span>
+        <label>終了<input id="end" name="end" type="time" value="20:00" step="1800" required></label>
+        <button type="submit" id="search-button">空き状況を検索</button>
+      </div>
+      <div class="search-bottom"><fieldset><legend>検索する市</legend><label><input type="checkbox" name="cities" value="kashiwa" checked>柏市</label><label><input type="checkbox" name="cities" value="nagareyama" checked>流山市</label><label><input type="checkbox" name="cities" value="abiko" checked>我孫子市</label></fieldset><p>同じ施設内のコート移動も含めて検索</p></div>
+    </form>
+    <div id="message" role="alert" hidden></div>
+    <section id="results-section" aria-labelledby="result-title">
+      <div class="results-heading"><h2 id="result-title">検索結果</h2><p id="summary">日付と時間を指定してください</p></div>
+      <div id="source-status" class="source-status" aria-live="polite"></div>
+      <p id="checked-at" class="checked-at"></p>
+      <div id="results"><div class="initial-state"><div class="court-symbol" aria-hidden="true"></div><h3>希望時間を、ひと続きに。</h3><p>同じコートで連続利用できる候補を優先します。<br>空き枠に合わせて、必要な予約時間も表示します。</p></div></div>
+    </section>
+    <aside class="notes"><p>3市とも「ソフトテニス」の検索条件で照会します。表示は照会時点の情報です。予約受付期間・利用資格・施設のお知らせは公式サイトでご確認ください。</p></aside>
+    <footer><span>公式の空き状況</span><a href="https://shisetsu-reservation.city.kashiwa.lg.jp/" target="_blank" rel="noopener noreferrer">柏市</a><a href="https://web136.rsv.ws-scs.jp/nagare/web/" target="_blank" rel="noopener noreferrer">流山市</a><a href="https://www.cm1.eprs.jp/yoyaku-chiba/ew/" target="_blank" rel="noopener noreferrer">我孫子市</a></footer>
+  </main>
+</body>
+</html>
